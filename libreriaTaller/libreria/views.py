@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from rest_framework import viewsets,filters
+from rest_framework import viewsets,filters,status
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
 from .serializer import libroSerializer
 from .serializer import UsuarioSerializer
@@ -18,21 +20,28 @@ class libroView(viewsets.ModelViewSet):
     filter_backends=[filters.SearchFilter]
     search_fields={'$titulo','$autor','$ISBN','$genero'}
     
+    @api_view(['DELETE'])
+    def eliminarLibro(request, pk):
+        try:
+            libro= libro.objects.get(pk=pk)
+        except libro.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        if request.method=='DELETE':
+            libro.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT,message="Se elimino correctamente")
+            
+    
     
 class usuarioView(viewsets.ModelViewSet):
     serializer_class=UsuarioSerializer
     queryset=usuario.objects.all()
     filter_backends=[filters.SearchFilter]
-    search_fields={'$nombreUsuario','$direccionResidencia','$tipoUsuario'}
+    search_fields=['$nombreUsuario','$correo']
 
 class prestamoView(viewsets.ModelViewSet):
     serializer_class=prestamoSerializer
     queryset=prestamo.objects.all()
-    filter_backends=[filters.SearchFilter]
-    search_fields={'$fecha_prestamo,$fecha_devolucion,$Estado,$usuario_prestamo,$libro_prestamo'}
 
 class multaView(viewsets.ModelViewSet):
     serializer_class=multaSerializer
     queryset=multa.objects.all()
-    filter_backends=[filters.SearchFilter]
-    search_fields={'$fecha_multa,$usuario_multado,$prestamo,$valor_multa,$estado_multa'}
