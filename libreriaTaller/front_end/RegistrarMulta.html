@@ -74,7 +74,7 @@
                         </div>
                 
                     </h2>
-                    <a href="listaCliente.html"  class="btn btn-warning" style="margin-top: -6%; margin-left: -54%;"> Lista de clientes</a>
+                    <a href="listaMulta.html"  class="btn btn-warning" style="margin-top: -6%; margin-left: -54%;"> Lista de multas</a>
 
                 </div>
             </div>
@@ -84,32 +84,25 @@
         <div class="form-overlay">
             <div class="row">  
                 <div class="col-md-4">
-                    <label for="fecha_prestamo" class="form-label">Fecha de prestamo</label>
+                    <label for="fecha_prestamo" class="form-label">Fecha de multa </label>
                     <input type="date" class="form-control" name="fecha_prestamo" id="fecha_prestamo" step="1" onfocusout="validarFechaPrestamo(this);">
                 </div>
                 <div class="col-md-4">
-                    <label for="fecha_devolucion" class="form-label">Fecha devolucion</label>
+                    <label for="fecha_devolucion" class="form-label">Usuario multado</label>
                     <input type="date" class="form-control" name="fecha_devolucion" id="fecha_devolucion" onfocusout="validarFechaDevolucion(this);">
-                </div>          
+                </div>   
+                <div class="col-md-4">
+                    <label for="fecha_devolucion" class="form-label">Valor de la multa</label>
+                    <input type="Number" class="form-control" name="fecha_devolucion" id="fecha_devolucion" onfocusout="validarFechaDevolucion(this);">
+                </div>        
                 <div class="col-md-4" >
-                    <label for="Estado" class="form-label">Tipo de estado</label>
+                    <label for="Estado" class="form-label">Estado de multa</label>
                     <select name="Estado" id="Estado" class="form-select">
                     <option selected disabled value="">¿En que estado te encuentras?</option>
-                    <option value="1">Prestamo</option>
-                    <option value="2">Entregado</option>
-                    <option value="3">Cancelado</option>
+                    <option value="1">pendiente</option>
+                    <option value="2">pagado</option>
                     </select>
                 </div>
-
-                <div class="col-md-4">
-                    <label for="usuario_prestamo" class="form-label">Usuario de prestamo</label>
-                    <input type="usuario_prestamo" class="form-control" name="usuario_prestamo" id="usuario_prestamo" onfocusout="validarUsuarioPrestamo(this);">
-                </div>
-                <div class="col-md-4">
-                    <label for="libro_prestamo" class="form-label">Libro de prestamo</label>
-                     <input type="libro_prestamo" class="form-control" name="libro_prestamo" id="libro_prestamo"onfocusout="validarLibroPrestado(this);"> 
-                </div>
-
                 <div class="col-12" >
                     <button class="btn btn-warning" type="button" onclick="registrarPrestamo();" style="width: 200px; margin-left:40%">Registrar</button>
                 </div>        

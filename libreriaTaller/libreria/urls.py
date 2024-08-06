@@ -14,10 +14,14 @@ routerUsuario.register(r'',views.usuarioView,'/usuario')
 routerPrestamo=routers.DefaultRouter()
 routerPrestamo.register(r'',views.prestamoView,'/prestamo')
 
+routerMulta=routers.DefaultRouter()
+routerMulta.register(r'',views.multaView,'/multa')
+
 
 urlpatterns = [
     path("api/v1/libro/", include(routerLibro.urls)),
     path("api/v1/usuario/", include(routerUsuario.urls)),
     path("api/v1/prestamo/", include(routerPrestamo.urls)),
+    path("api/v1/multa/", include(routerMulta.urls)),
     path("docs/",include_docs_urls(title ="libreriaAPI"))
 ]

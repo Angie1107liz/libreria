@@ -3,6 +3,7 @@ from rest_framework import serializers
 from .models import libro
 from .models import usuario
 from .models import prestamo
+from .models import multa
 #aca se importa la clase modelo
 
 #se crea la clase serializer por cada entidad
@@ -26,4 +27,8 @@ class UsuarioSerializer(serializers.ModelSerializer):
 class prestamoSerializer(serializers.ModelSerializer):
     class Meta:
         model=prestamo
+        fields='__all__'
+class multaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=multa
         fields='__all__'
