@@ -24,8 +24,10 @@ SECRET_KEY = 'django-insecure-r+iw9&&lmilvw63lc96an1!&5l+%(#lzmi-$0#n)*tvnm!7i@w
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+
 #direccion ip que la api acepta
-ALLOWED_HOSTS = ['192.168.137.68']
+#ALLOWED_HOSTS = ['192.168.126.52']
 
 
 # Application definition

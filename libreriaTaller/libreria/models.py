@@ -25,7 +25,7 @@ class libro(models.Model):
     num_ocupados=models.IntegerField(max_length=3)
     
     def __str__(self):
-        return self.title 
+        return self.titulo 
     
     
 class usuario(models.Model):
@@ -40,6 +40,22 @@ class usuario(models.Model):
     ]
     tipoUsuario = models.IntegerField(choices=tipo_usuario)
     def _str_(self):
+        return self.nombreUsuario
+    
+class prestamo(models.Model):
+    fecha_prestamo=models.DateField()
+    fecha_devolucion=models.DateField()
+    estado=[
+        (1, 'Prestamo'),
+        (2, 'Entregado'),
+        (3, 'Cancelado')
+    ]
+        
+    Estado=models.IntegerField(choices=estado)
+    usuario_prestamo=models.ForeignKey(usuario, related_name='prestamo', on_delete=models.PROTECT) 
+    libro_prestamo = models.ForeignKey(libro, related_name='prestamo', on_delete=models.CASCADE)
+    
+    def __str__(self):
         return self.title
     
 

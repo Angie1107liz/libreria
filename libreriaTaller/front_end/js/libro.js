@@ -1,5 +1,5 @@
 //se almacena la url de la api
-let url="http://127.0.0.1:8000/api/v1/libro/";
+let url="http://127.0.0.1:8000/libreria/api/v1/libro/";
 
 function listarLibro() {
     var busqueda = document.getElementById("buscar").value;

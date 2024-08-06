@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from .models import libro
 from .models import usuario
+from .models import prestamo
 #aca se importa la clase modelo
 
 #se crea la clase serializer por cada entidad
@@ -21,4 +22,8 @@ class UsuarioSerializer(serializers.ModelSerializer):
     #si se desea agregar todos los campos sse utiliza la funcion __all__
     class Meta:
         model=usuario
+        fields='__all__'
+class prestamoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=prestamo
         fields='__all__'
