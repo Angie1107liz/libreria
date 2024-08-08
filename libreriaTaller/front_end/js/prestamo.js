@@ -1,5 +1,5 @@
 //se almacena la url de la api
-//let url ="http://127.0.0.1:8000/libreria/api/v1/prestamo/";
+let urlPrestamo ="http://127.0.0.1:8000/libreria/api/v1/prestamo/";
 function listarPrestamo() {
   cargarUsuario();
   cargarLibro();

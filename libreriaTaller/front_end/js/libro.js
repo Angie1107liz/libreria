@@ -1,9 +1,9 @@
 //se almacena la url de la api
-let url="http://127.0.0.1:8000/libreria/api/v1/libro/";
+let urllibro="http://127.0.0.1:8000/libreria/api/v1/libro/";
 
 function listarLibro() {
     var busqueda = document.getElementById("buscar").value;
-    var urlBusqueda = url;
+    var urlBusqueda = urllibro;
     if (busqueda!=""){
         urlBusqueda+="?search="+busqueda;
     }   
@@ -253,7 +253,7 @@ function updateLibro() {
     //Cuando estamos actualizando los datos, y lo hacemos correctamente Aparecerá la Alerta EXCELENTE *****
     if(validarCampos()){
     $.ajax({
-        url: url + id+"/",
+        url: urllibro + id+"/",
         type: "PUT",
         data: formData,
         success: function(result) {
@@ -287,7 +287,7 @@ function updateLibro() {
 function consultarLibroID(id){
     //alert(id);
     $.ajax({
-        url:url + id,
+        url:urllibro + id,
         type:"GET",
         success: function(result){
             
@@ -337,7 +337,7 @@ function limpiar(){
       // Si el usuario confirma la eliminación, proceder con la solicitud AJAX
       if (result.isConfirmed) {
         $.ajax({
-          url: url + id+"/",
+          url: urllibro + id+"/",
           type: "DELETE",
           success: function (eliminarPermanente) {
             // Mostrar un mensaje de éxito

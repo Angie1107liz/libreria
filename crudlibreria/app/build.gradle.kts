@@ -35,6 +35,13 @@ android {
     }
 }
 
+//buildFeatures{
+//    viewBinding = true
+//}
+//viewBinding {
+//    enabled = true
+//}
+
 dependencies {
 
     //procedemos a agregar tres  dependencias para
@@ -53,6 +60,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.ui.desktop)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

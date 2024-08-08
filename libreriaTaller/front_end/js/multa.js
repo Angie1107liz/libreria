@@ -1,5 +1,5 @@
 
-
+let urlMulta="http://127.0.0.1:8000/libreria/api/v1/multa/";
 function listarMulta() {
   var busqueda = document.getElementById("buscar").value;
   var urlBusqueda = urlMulta;
@@ -97,7 +97,7 @@ function RegistrarMulta() {
     // console.log(formData);
     if (validarCampos()) {
         $.ajax({
-            url: urlMulta,
+            url: "http://127.0.0.1:8000/libreria/api/v1/multa/",
             type: "POST",
             data: formData,
             success: function(result){

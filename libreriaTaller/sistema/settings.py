@@ -27,7 +27,7 @@ DEBUG = True
 
 
 #direccion ip que la api acepta
-#ALLOWED_HOSTS = ['192.168.126.52']
+ALLOWED_HOSTS = ['192.168.1.68']
 
 
 # Application definition

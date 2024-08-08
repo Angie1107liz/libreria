@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".guardarLibroFragment">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#6A4E"
+        app:title="Libros"
+        app:titleTextColor="@color/black" />
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
@@ -15,14 +21,16 @@
         android:layout_width="match_parent"
         android:layout_height="715dp"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="70dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/lblTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Titulo" />
+            android:text="Titulo"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/textTitulo"
@@ -35,7 +43,9 @@
             android:id="@+id/lblAutor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lblAutor" />
+            android:text="@string/lblAutor"
+            android:textColor="#090909"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/textAutor"
@@ -48,7 +58,9 @@
             android:id="@+id/lblIsbn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Isbn" />
+            android:text="Isbn"
+            android:textColor="#090909"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/textIsbn"
@@ -61,7 +73,9 @@
             android:id="@+id/lblGenero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Genero" />
+            android:text="Genero"
+            android:textColor="#020202"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/textgenero"
@@ -74,7 +88,9 @@
             android:id="@+id/lblNum_ejem_disponible"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ejemplares Disponibles" />
+            android:text="Ejemplares Disponibles"
+            android:textColor="#040404"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/textNum_ejem_disponible"
@@ -87,7 +103,9 @@
             android:id="@+id/lblNum_ejem_ocupados"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ejemplares Ocupados" />
+            android:text="Ejemplares Ocupados"
+            android:textColor="#050505"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/textNum_ejem_ocupados"
@@ -110,12 +128,12 @@
                 android:layout_weight="1"
                 android:text="guardar"
                 android:textSize="19dp"
-                app:icon="@drawable/save_svgrepo_com"
+                app:icon="@drawable/guardar"
                 app:iconGravity="textStart"
-                app:iconSize="30dp" />
+                app:iconSize="25dp" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnVolver"
                 android:layout_width="133dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -123,7 +141,7 @@
                 android:layout_weight="1"
                 android:text="volver"
                 android:textSize="19dp"
-                app:icon="@drawable/return_svgrepo_com"
+                app:icon="@drawable/devolver"
                 app:iconGravity="textStart"
                 app:iconSize="25dp" />
         </LinearLayout>
